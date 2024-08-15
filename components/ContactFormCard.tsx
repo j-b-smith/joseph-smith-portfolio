@@ -39,7 +39,7 @@ const ContactFormCard = () => {
       {isSent ? (
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">Message Sent! 🎉</h2>
-          <p className="text-lg text-gray-700">Thank you for reaching out! I'll get back to you as soon as possible.</p>
+          <p className="text-lg text-gray-700">Thank you for reaching out! I&#39;ll get back to you as soon as possible.</p>
         </div>
       ) : (
         <>
