@@ -1,29 +1,39 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 text-center py-2 fixed bottom-0 left-0 w-full">
-      <div className="container">
-        <p className="text-gray-600 text-sm">&copy; {new Date().getFullYear()} Joseph Smith. All rights reserved.</p>
-        <p className="text-sm">
+    <footer className="bg-gradient-to-r from-blue-500 to-indigo-600 text-center py-4">
+      <div className="container flex flex-col items-center">
+        <p className="text-white text-sm mb-2">&copy; {new Date().getFullYear()} Joseph Smith. All rights reserved.</p>
+        <div className="flex space-x-4">
           <Link
             href="https://linkedin.com/in/joseph-b-smith-eng"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:text-blue-700"
           >
-            LinkedIn
+            <Image
+              src="/contact/linkedin.png"
+              alt="LinkedIn"
+              width={32}
+              height={32}
+              className="hover:opacity-80 transition-opacity duration-300"
+            />
           </Link>
-          {' | '}
           <Link
             href="https://github.com/j-b-smith"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:text-blue-700"
           >
-            GitHub
+            <Image
+              src="/contact/github.png"
+              alt="GitHub"
+              width={32}
+              height={32}
+              className="hover:opacity-80 transition-opacity duration-300"
+            />
           </Link>
-        </p>
+        </div>
       </div>
     </footer>
   );
