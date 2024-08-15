@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import GoogleAnalytics from "@/utils/GoogleAnalytics";
 
 interface CustomProjectCardProps {
   customTitle: string;
@@ -26,11 +27,14 @@ const CustomProjectCard: React.FC<CustomProjectCardProps> = ({
       </div>
       <div className="p-4 flex flex-col flex-grow">
         <h3 className="text-md font-semibold text-gray-900 mb-2">{repoName}</h3>
-        <p className="text-sm text-gray-700 mb-4 flex-grow break-words">{summary}</p>
+        <p className="text-sm text-gray-700 mb-4 flex-grow break-words">
+          {summary}
+        </p>
         <Link
           href={`${html_url}/blob/main/README.md`}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => GoogleAnalytics.trackLinkClick(`"Check out the code!" clicked for ${repoName}`)}
           className="bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 transition-colors duration-300 text-center mt-auto"
         >
           Check out the code!

@@ -1,7 +1,9 @@
 import Link from "next/link";
 import React from "react";
+import GoogleAnalytics from "@/utils/GoogleAnalytics";
 
 const ResumeSummaryCard = () => {
+
   return (
     <div className="bg-white shadow-lg rounded-lg p-6 w-full h-full flex flex-col justify-between">
       <div>
@@ -43,6 +45,7 @@ const ResumeSummaryCard = () => {
         href="/JosephSmithResume.pdf"
         target="_blank"
         rel="noopener noreferrer"
+        onClick={GoogleAnalytics.trackResumeDownload}
         className="bg-indigo-500 text-white px-6 py-3 rounded-full hover:bg-indigo-700 hover:text-white transition-colors block text-center"
       >
         View My Resume

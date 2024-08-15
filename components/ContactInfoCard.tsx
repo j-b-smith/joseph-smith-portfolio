@@ -1,6 +1,7 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import GoogleAnalytics from "@/utils/GoogleAnalytics";
 
 const ContactInfoCard = () => {
   return (
@@ -23,6 +24,7 @@ const ContactInfoCard = () => {
             href="https://linkedin.com/in/joseph-b-smith-eng"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => GoogleAnalytics.trackLinkClick("LinkedIn")}
             className="ml-2 text-gray-700 hover:text-indigo-800"
           >
             LinkedIn
@@ -39,6 +41,7 @@ const ContactInfoCard = () => {
             href="https://github.com/j-b-smith"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => GoogleAnalytics.trackLinkClick("GitHub")}
             className="ml-2 text-gray-700 hover:text-indigo-800"
           >
             GitHub
