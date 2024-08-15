@@ -15,18 +15,18 @@ const CustomProjectCard: React.FC<CustomProjectCardProps> = ({
   html_url,
 }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col justify-between h-full">
+    <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col h-full">
       <div
-        className="w-full h-16 flex items-center justify-center"
+        className="w-full h-16 flex px-4 py-1"
         style={{
           background: "linear-gradient(to right, #667eea, #764ba2)",
         }}
       >
-        <h2 className="text-lg font-bold text-white text-center px-2">{customTitle}</h2>
+        <h2 className="text-lg font-bold text-white">{customTitle}</h2>
       </div>
       <div className="p-4 flex flex-col flex-grow">
         <h3 className="text-md font-semibold text-gray-900 mb-2">{repoName}</h3>
-        <p className="text-sm text-gray-700 mb-4 flex-grow">{summary}</p>
+        <p className="text-sm text-gray-700 mb-4 flex-grow break-words">{summary}</p>
         <Link
           href={`${html_url}/blob/main/README.md`}
           target="_blank"
