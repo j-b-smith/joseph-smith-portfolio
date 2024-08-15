@@ -1,15 +1,20 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const router = useRouter();
-  const isHomePage = router.pathname === '/';
-
+  const isHomePage = router.pathname === "/";
+  const getStyling = (path: string) =>
+    `px-3 py-2 rounded-md text-white transition-colors duration-300 cursor-pointer ${
+      router.pathname === path
+        ? "bg-indigo-700"
+        : "hover:bg-indigo-500"
+    }`;
   return (
     <header className="fixed top-0 left-0 right-0 bg-gradient-to-r from-blue-500 to-indigo-600 shadow-lg z-50">
       <div className="container flex justify-between items-center py-4 px-6">
         <div className="flex items-center">
-          <div className={`w-10 h-10 mr-4 ${isHomePage ? 'invisible' : ''}`}>
+          <div className={`w-10 h-10 mr-4 ${isHomePage ? "invisible" : ""}`}>
             <img
               src="/profile.jpeg"
               alt="Joseph Smith"
@@ -21,45 +26,38 @@ const Navbar = () => {
         <nav className="space-x-4">
           <Link href="/" passHref>
             <span
-              className={`px-3 py-2 rounded-md text-white transition-colors duration-300 cursor-pointer ${
-                router.pathname === '/' ? 'bg-indigo-700' : 'hover:bg-indigo-500'
-              }`}
+              className={getStyling('/')}
             >
               Home
             </span>
           </Link>
           <Link href="/about" passHref>
             <span
-              className={`px-3 py-2 rounded-md text-white transition-colors duration-300 cursor-pointer ${
-                router.pathname === '/about' ? 'bg-indigo-700' : 'hover:bg-indigo-500'
-              }`}
+              className={getStyling('/about')}
             >
               About
             </span>
           </Link>
           <Link href="/projects" passHref>
             <span
-              className={`px-3 py-2 rounded-md text-white transition-colors duration-300 cursor-pointer ${
-                router.pathname === '/projects' ? 'bg-indigo-700' : 'hover:bg-indigo-500'
-              }`}
+              className={getStyling('/projects')}
             >
               Projects
             </span>
           </Link>
           <Link href="/resume" passHref>
             <span
-              className={`px-3 py-2 rounded-md text-white transition-colors duration-300 cursor-pointer ${
-                router.pathname === '/resume' ? 'bg-indigo-700' : 'hover:bg-indigo-500'
-              }`}
+              className={getStyling('/resume')}
             >
               Resume
             </span>
           </Link>
+          <Link href="/recommendations" passHref>
+            <span className={getStyling('/recommendations')}>Recommendations</span>
+          </Link>
           <Link href="/contact" passHref>
             <span
-              className={`px-3 py-2 rounded-md text-white transition-colors duration-300 cursor-pointer ${
-                router.pathname === '/contact' ? 'bg-indigo-700' : 'hover:bg-indigo-500'
-              }`}
+              className={getStyling('/contact')}
             >
               Contact
             </span>
