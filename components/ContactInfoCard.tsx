@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const ContactInfoCard = () => {
   return (
@@ -18,14 +19,14 @@ const ContactInfoCard = () => {
             width={24}
             height={24}
           />
-          <a
+          <Link
             href="https://linkedin.com/in/joseph-b-smith-eng"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-2 text-gray-700 hover:text-indigo-800"
           >
             LinkedIn
-          </a>
+          </Link>
         </div>
         <div className="flex items-center">
           <Image
@@ -34,14 +35,14 @@ const ContactInfoCard = () => {
             width={24}
             height={24}
           />
-          <a
+          <Link
             href="https://github.com/j-b-smith"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-2 text-gray-700 hover:text-indigo-800"
           >
             GitHub
-          </a>
+          </Link>
         </div>
         <div className="flex items-center">
           <span className="text-gray-700">📧 Email: jsmith74265@gmail.com</span>
