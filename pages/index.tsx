@@ -11,6 +11,7 @@ const Home = () => {
     { src: '/badges/python.png', alt: 'Python' },
     { src: '/badges/react.png', alt: 'React' },
     { src: '/badges/django.png', alt: 'Django' },
+    { src: '/badges/nextjs.svg', alt: 'NextJS' },
   ];
 
   return (
