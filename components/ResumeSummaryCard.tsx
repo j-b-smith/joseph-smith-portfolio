@@ -4,6 +4,10 @@ import GoogleAnalytics from "@/utils/GoogleAnalytics";
 
 const ResumeSummaryCard = () => {
 
+  const handleClick = () => {
+    GoogleAnalytics.trackResumeDownload
+  };
+
   return (
     <div className="bg-white shadow-lg rounded-lg p-6 w-full h-full flex flex-col justify-between">
       <div>
@@ -45,7 +49,7 @@ const ResumeSummaryCard = () => {
         href="/JosephSmithResume.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        onClick={GoogleAnalytics.trackResumeDownload}
+        onClick={handleClick}
         className="bg-indigo-500 text-white px-6 py-3 rounded-full hover:bg-indigo-700 hover:text-white transition-colors block text-center"
       >
         View My Resume
