@@ -1,23 +1,45 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 const ContactInfoCard = () => {
   return (
     <div className="lg:w-1/2 flex-shrink-0 bg-white shadow-lg rounded-lg p-6">
-      <h2 className="text-3xl font-bold mb-4">Let's Get in Touch! 😊</h2>
+      <h2 className="text-3xl font-bold mb-4">Let&#39;s Get in Touch! 😊</h2>
       <p className="text-lg text-gray-700 mb-4">
-        I'm always open to discussing new opportunities, projects, or even just having a friendly chat. Whether you're interested in collaborating or just want to say hi, I'd love to hear from you! 📬
+        I&#39;m always open to discussing new opportunities, projects, or even
+        just having a friendly chat. Whether you&#39;re interested in
+        collaborating or just want to say hi, I&#39;d love to hear from you! 📬
       </p>
       <div className="space-y-2 mb-6">
         <div className="flex items-center">
-          <Image src="/contact/linkedin.png" alt="LinkedIn" width={24} height={24} />
-          <a href="https://linkedin.com/in/joseph-b-smith-eng" target="_blank" rel="noopener noreferrer" className="ml-2 text-gray-700 hover:text-indigo-800">
+          <Image
+            src="/contact/linkedin.png"
+            alt="LinkedIn"
+            width={24}
+            height={24}
+          />
+          <a
+            href="https://linkedin.com/in/joseph-b-smith-eng"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 text-gray-700 hover:text-indigo-800"
+          >
             LinkedIn
           </a>
         </div>
         <div className="flex items-center">
-          <Image src="/contact/github.png" alt="GitHub" width={24} height={24} />
-          <a href="https://github.com/j-b-smith" target="_blank" rel="noopener noreferrer" className="ml-2 text-gray-700 hover:text-indigo-800">
+          <Image
+            src="/contact/github.png"
+            alt="GitHub"
+            width={24}
+            height={24}
+          />
+          <a
+            href="https://github.com/j-b-smith"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 text-gray-700 hover:text-indigo-800"
+          >
             GitHub
           </a>
         </div>
@@ -36,7 +58,9 @@ const ContactInfoCard = () => {
           height={300}
           className="rounded-full"
         />
-        <p className="text-center text-gray-700 mt-2">(Here's a picture of my dog as a puppy 👀)</p>
+        <p className="text-center text-gray-700 mt-2">
+          (Here&#39;s a picture of my dog as a puppy 👀)
+        </p>
       </div>
     </div>
   );
