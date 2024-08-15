@@ -6,10 +6,7 @@ export default function Document() {
     <Html>
       <Head>
         {/* Google Analytics */}
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=G-Y3MR191DV1`}
-        />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3MR191DV1"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
