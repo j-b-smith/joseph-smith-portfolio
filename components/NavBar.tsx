@@ -59,7 +59,7 @@ const Navbar = () => {
         </nav>
       </div>
       {isOpen && (
-        <div className="lg:hidden bg-indigo-600 shadow-lg rounded-md p-4 space-y-2 absolute w-full left-0 top-[4rem]">
+        <div className="lg:hidden bg-indigo-600 shadow-lg rounded-md rounded-t-none p-4 space-y-2 absolute w-full left-0 top-[4rem]">
           <Link href="/" passHref>
             <span className={getStyling("/")} onClick={closeMenu}>Home</span>
           </Link>
