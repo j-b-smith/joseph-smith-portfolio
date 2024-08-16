@@ -68,7 +68,7 @@ const CustomProjectCard: React.FC<CustomProjectCardProps> = ({
           <strong>Summary:</strong> {summary}
         </p>
         <Link
-          href={`${html_url}/blob/main/README.md`}
+          href={`${html_url}/blob/master/README.md`}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() =>
