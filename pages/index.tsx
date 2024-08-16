@@ -16,30 +16,30 @@ const Home = () => {
 
   return (
     <div className="container mx-auto py-10 flex flex-col items-center text-center">
-      <div className="w-64 h-64 flex justify-center">
+      <div className="w-40 h-40 md:w-64 md:h-64 flex justify-center">
         <img
           src="/profile.jpeg"
           alt="Joseph Smith"
-          className="rounded-full w-64 h-64 object-cover shadow-lg"
+          className="rounded-full w-full h-full object-cover shadow-lg"
         />
       </div>
-      <div className="mt-8">
-        <h1 className="text-5xl font-bold mb-4">Hello, I&#39;m Joseph Smith</h1>
-        <p className="text-xl text-gray-600 mb-8">
+      <div className="mt-6 md:mt-8">
+        <h1 className="text-3xl md:text-5xl font-bold mb-4">Hello, I&#39;m Joseph Smith</h1>
+        <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8">
           A passionate Software Engineer specializing in Quality Automation.
         </p>
-        <Link href="/projects" className="bg-indigo-500 text-white px-6 py-3 rounded-full hover:bg-indigo-700 hover:text-white transition-colors">
+        <Link href="/projects" className="bg-indigo-500 text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:bg-indigo-700 hover:text-white transition-colors">
           View My Projects
         </Link>
       </div>
 
-      <div className="mt-10 flex justify-center space-x-8">
+      <div className="mt-8 md:mt-10 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
         {badges.map((badge, index) => (
           <img
             key={index}
             src={badge.src}
             alt={badge.alt}
-            className="h-16 w-18 object-contain"
+            className="h-12 md:h-16 object-contain mx-auto"
           />
         ))}
       </div>

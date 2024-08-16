@@ -27,15 +27,20 @@ const ImageGallery: React.FC = () => {
   };
 
   return (
-    <div className="flex-1 min-h-full grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {images.map((image, index) => (
-        <img
+        <div
           key={index}
-          src={image}
-          alt={`Thumbnail ${index + 1}`}
-          className="w-full h-40 object-cover cursor-pointer rounded-lg hover:opacity-80 transition-opacity"
+          className="w-full h-64 sm:h-72 lg:h-80 overflow-hidden cursor-pointer rounded-lg relative"
           onClick={() => openModal(image)}
-        />
+        >
+          <img
+            key={index}
+            src={image}
+            alt={`Thumbnail ${index + 1}`}
+            className="w-full h-full object-cover hover:opacity-80 transition-opacity"
+          />
+        </div>
       ))}
       <ImageModal isOpen={isModalOpen} imageSrc={selectedImage} onClose={closeModal} />
     </div>

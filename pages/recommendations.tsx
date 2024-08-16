@@ -13,7 +13,7 @@ const recommendations = [
   },
   {
     reviewerName: 'Jake Campbell',
-    jobTitle: 'Principal Quality Assurance Engineer at Routable',
+    jobTitle: 'Principal QA Engineer at Routable',
     date: 'March 11, 2024',
     relationship: 'Was senior to Joseph but didn\'t manage Joseph directly',
     reviewContent: `I am delighted to write this recommendation for Joseph Smith, whom I have had the pleasure of working alongside as a Software Quality Test Automation Developer. Joseph is an exceptional professional whose contributions to our team have consistently exceeded expectations. One of Joseph's standout qualities is his remarkable productivity speed. His ability to efficiently complete tasks without compromising quality is truly impressive. Whether it's designing automated test scripts or executing test cases, Joseph consistently delivers outstanding results within tight deadlines. He possesses a deep understanding of various testing methodologies, tools, and frameworks, allowing him to tackle complex challenges with ease. Joseph's aptitude for grasping new concepts quickly and applying them effectively sets him apart as a highly capable and adaptable professional. His technical expertise has been instrumental in identifying and resolving critical issues, thereby enhancing the overall quality and reliability of our software products. Furthermore, Joseph's positive attitude is contagious. He approaches every task with enthusiasm, optimism, and a willingness to learn. His ability to maintain a positive outlook, even in the face of adversity, inspires those around him and fosters a collaborative and supportive work environment. Joseph's exceptional interpersonal skills and team-oriented mindset make him a pleasure to work with and a valuable addition to any team.`,
@@ -37,7 +37,7 @@ const recommendations = [
   },
   {
     reviewerName: 'Ashley Ancheta',
-    jobTitle: 'Software QA Engineer | Fanatic of user empathy and bug hunting',
+    jobTitle: 'Software QA Engineer',
     date: 'March 5, 2024',
     relationship: 'Worked with Joseph on the same team',
     reviewContent: `I was always impressed by Joe's attention to detail and knowledge in automation whenever we worked together. One of the things I most admire about Joe is his calm and friendly demeanor in the most stressful of situations. As an example, when I was working on code release I found multiple backend functional tests that failed and I needed help investigating and re-running them. Joe was super quick to respond and began investigating. He explained clearly where the test failed and why. Without his agility and support, I wouldn't have been able to complete code release as quickly as we did together. In addition to that, when Joe came back to Routable as a Senior SQA Engineer, he made himself always available to help the team out even while trying to get his bearings together during the first weeks. Joe is a dedicated and hardworking engineer who brings out the best quality in any project. Any team will be thrilled and happy they made a decision on Joe!`,
