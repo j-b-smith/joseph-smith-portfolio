@@ -27,11 +27,11 @@ const ImageGallery: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 h-full overflow-y-auto scrollbar-thin scrollbar-thumb-indigo-600 scrollbar-track-gray-200 my-5 py-2">
       {images.map((image, index) => (
         <div
           key={index}
-          className="w-full h-64 sm:h-72 lg:h-80 overflow-hidden cursor-pointer rounded-lg relative"
+          className="w-full h-auto overflow-hidden cursor-pointer rounded-lg relative"
           onClick={() => openModal(image)}
         >
           <img

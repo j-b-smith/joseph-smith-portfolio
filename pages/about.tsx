@@ -3,7 +3,7 @@ import ImageGallery from "../components/ImageGallery";
 
 const About = () => {
   return (
-    <div className="container flex flex-col lg:flex-row gap-8 items-stretch mt-10 max-h-full">
+    <div className="container flex flex-col lg:flex-row gap-8 items-stretch mt-10 h-[calc(100vh-9rem)]">
       <div className="bg-white shadow-lg rounded-lg p-6 flex-1 flex flex-col justify-between">
         <h1 className="text-4xl font-bold mb-6">About Me 🚀</h1>
         <p className="text-lg text-gray-700 mb-4">
@@ -17,8 +17,7 @@ const About = () => {
         </p>
         <p className="text-lg text-gray-700 mb-4">
           Beyond the code, I&#39;m passionate about music 🎸—I&#39;ve been playing
-          guitar since I was 13, and now at 29, I&#39;m still jamming to metalcore
-          and acoustic tunes.
+          guitar for around 15 years. My favorite genre's to play are metalcore and acoustic.
         </p>
         <p className="text-lg text-gray-700 mb-4">
           In my free time, I&#39;m the head routesetter at a local climbing gym 🧗‍♂️,
@@ -43,7 +42,7 @@ const About = () => {
       </div>
 
       {/* Image Gallery Card */}
-      <div className="bg-white shadow-lg rounded-lg p-6 flex-1 h-full">
+      <div className="bg-white shadow-lg rounded-lg p-6 flex-1">
         <ImageGallery />
       </div>
     </div>
