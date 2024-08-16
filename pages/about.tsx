@@ -3,9 +3,8 @@ import ImageGallery from "../components/ImageGallery";
 
 const About = () => {
   return (
-    <div className="container mx-auto py-10 flex lg:flex-row flex-col items-stretch gap-8">
-      {/* Text Card */}
-      <div className="bg-white shadow-lg rounded-lg p-6 flex-1 flex flex-col justify-between min-h-90">
+    <div className="container flex flex-col lg:flex-row gap-8 items-stretch mt-10 max-h-full">
+      <div className="bg-white shadow-lg rounded-lg p-6 flex-1 flex flex-col justify-between">
         <h1 className="text-4xl font-bold mb-6">About Me 🚀</h1>
         <p className="text-lg text-gray-700 mb-4">
           Hey there! 👋 I&#39;m Joseph, a Software Engineer with a focus on{" "}
