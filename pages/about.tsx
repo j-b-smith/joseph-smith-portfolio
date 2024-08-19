@@ -17,7 +17,7 @@ const About = () => {
         </p>
         <p className="text-lg text-gray-700 mb-4">
           Beyond the code, I&#39;m passionate about music 🎸—I&#39;ve been playing
-          guitar for around 15 years. My favorite genre's to play are metalcore and acoustic.
+          guitar for around 15 years. My favorite genre&#39;s to play are metalcore and acoustic.
         </p>
         <p className="text-lg text-gray-700 mb-4">
           In my free time, I&#39;m the head routesetter at a local climbing gym 🧗‍♂️,
