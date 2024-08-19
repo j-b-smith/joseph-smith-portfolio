@@ -11,6 +11,7 @@ const ImageGallery: React.FC = () => {
     '/about/7.jpeg',
     '/about/8.jpeg',
     '/about/9.jpeg',
+    '/about/10.png',
   ];
 
   const [isModalOpen, setIsModalOpen] = useState(false);

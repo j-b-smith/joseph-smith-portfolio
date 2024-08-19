@@ -3,8 +3,11 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-blue-500 to-indigo-600 text-center py-2">
+    <footer className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-blue-500 to-indigo-600 text-center py-2 border--100">
       <div className="container flex justify-between items-center px-6 max-h-12">
+        <p className="text-white text-sm">
+          &copy; {new Date().getFullYear()} Joseph Smith. All rights reserved.
+        </p>
         <div className="flex space-x-4">
           <Link
             href="https://linkedin.com/in/joseph-b-smith-eng"
@@ -33,9 +36,6 @@ const Footer = () => {
             />
           </Link>
         </div>
-        <p className="text-white text-sm">
-          &copy; {new Date().getFullYear()} Joseph Smith. All rights reserved.
-        </p>
       </div>
     </footer>
   );
