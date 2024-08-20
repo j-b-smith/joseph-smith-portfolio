@@ -55,7 +55,7 @@ const recommendations = [
 
 const RecommendationsPage: React.FC = () => {
     return (
-        <div className="container mx-auto py-10 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2"> 
+        <div className="container mx-auto py-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2"> 
           {recommendations.map((rec, index) => (
             <RecommendationCard
               key={index}

@@ -67,7 +67,7 @@ const Projects = () => {
   });
 
   return (
-    <div className="container mx-auto py-10 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="container mx-auto py-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
       {sortedRepos.map((repo) => {
         const project = projectData.find((p) => p.repoName === repo.name);
 
