@@ -3,7 +3,7 @@ import ImageGallery from "../components/ImageGallery";
 
 const About = () => {
   return (
-    <div className="container flex flex-col lg:flex-row gap-8 items-stretch pt-12 h-[calc(100vh-7rem)]">
+    <div className="container flex flex-col lg:flex-row gap-8 items-stretch pt-12 lg:h-[calc(100vh-7rem)]">
       <div className="bg-white shadow-lg rounded-lg p-6 flex-1 flex flex-col justify-between">
         <h1 className="text-4xl font-bold mb-6">About Me 🚀</h1>
         <p className="text-lg text-gray-700 mb-4">
