@@ -4,7 +4,7 @@ import ContactFormCard from '../components/ContactFormCard';
 
 const Contact = () => {
   return (
-    <div className="container mx-auto flex flex-col lg:flex-row gap-8 py-12 px-6 pb-16" style={{ minHeight: "calc(100vh - 3rem)" }}>
+    <div className="container mx-auto flex flex-col lg:flex-row gap-6 sm:gap-8 py-8 sm:py-12 px-4 sm:px-6 lg:px-8" style={{ minHeight: "calc(100vh - 3rem)" }}>
       <ContactInfoCard />
       <ContactFormCard />
     </div>
