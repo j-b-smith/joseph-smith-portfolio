@@ -1,10 +1,5 @@
+import { ImageModalProps } from "@/types";
 import React from "react";
-
-interface ImageModalProps {
-  isOpen: boolean;
-  imageSrc: string;
-  onClose: () => void;
-}
 
 const ImageModal: React.FC<ImageModalProps> = ({
   isOpen,
@@ -14,15 +9,15 @@ const ImageModal: React.FC<ImageModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50 p-4">
-      <div className="relative">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50 p-4 sm:p-6">
+      <div className="relative max-w-full max-h-full">
         <img
           src={imageSrc}
           alt="Selected"
-          className="max-w-full max-h-[80vh] w-auto h-auto rounded-lg"
+          className="max-w-full max-h-[70vh] w-auto h-auto rounded-lg"
         />
         <button
-          className="absolute top-0 right-0 mt-2 mr-2 text-white text-3xl"
+          className="absolute top-2 right-2 text-white text-2xl sm:text-3xl"
           onClick={onClose}
         >
           &times;

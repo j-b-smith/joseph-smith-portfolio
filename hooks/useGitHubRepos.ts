@@ -1,12 +1,6 @@
 import { useState, useEffect } from 'react';
 
-interface GitHubRepo {
-  id: number;
-  name: string;
-  description: string;
-  html_url: string;
-  full_name: string;
-}
+
 
 const useGitHubRepos = (username: string) => {
   const [repos, setRepos] = useState<GitHubRepo[]>([]);

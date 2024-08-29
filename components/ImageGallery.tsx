@@ -28,7 +28,7 @@ const ImageGallery: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 h-full overflow-y-auto scrollbar-thin scrollbar-thumb-indigo-600 scrollbar-track-gray-200 my-5 py-2">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 h-full overflow-y-auto scrollbar-thin scrollbar-thumb-indigo-600 scrollbar-track-gray-200 py-2">
       {images.map((image, index) => (
         <div
           key={index}

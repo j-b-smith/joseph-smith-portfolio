@@ -5,10 +5,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen">
       <NavBar />
-      <main className="flex-grow container m-auto py-10 px-6 pb-20">
+      <main className="flex-grow container mx-auto py-6 px-4 sm:px-6 lg:px-8">
         {children}
       </main>
-        <Footer />
+      <Footer />
     </div>
   );
 };

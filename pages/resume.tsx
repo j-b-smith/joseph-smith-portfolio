@@ -9,26 +9,27 @@ const Resume = () => {
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
   return (
-    <div className="flex flex-col min-h-screen pb-4">
-      <div
-        className="container mx-auto flex flex-col gap-8 items-stretch flex-grow pt-10 px-4 sm:px-6"
-        style={{ height: "auto" }}
-      >
-        <div className="w-full lg:w-1/2 mx-auto">
-          <ResumeSummaryCard />
-        </div>
-        <div className="w-full lg:w-1/2 mx-auto h-full overflow-hidden">
-          <div className="border shadow-lg rounded-lg h-full w-full overflow-hidden">
-            <Worker
-              workerUrl={`https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js`}
-            >
-              <Viewer
-                fileUrl="/JosephSmithResume.pdf"
-                plugins={[defaultLayoutPluginInstance]}
-                withCredentials={false}
-              />
-            </Worker>
-          </div>
+    <div
+      className="container mx-auto flex flex-col lg:flex-row gap-8 my-4"
+      style={{ height: "calc(100vh - 4.5rem)", paddingTop: "2rem", paddingBottom: "2rem" }}
+    >
+      {/* Resume Summary Card */}
+      <div className="flex-1 h-full">
+        <ResumeSummaryCard />
+      </div>
+
+      {/* PDF Viewer Card (Hidden on mobile) */}
+      <div className="flex-1 h-full hidden lg:block">
+        <div className="border shadow-lg rounded-lg h-full w-full overflow-hidden">
+          <Worker
+            workerUrl={`https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js`}
+          >
+            <Viewer
+              fileUrl="/JosephSmithResume.pdf"
+              plugins={[defaultLayoutPluginInstance]}
+              withCredentials={false}
+            />
+          </Worker>
         </div>
       </div>
     </div>
