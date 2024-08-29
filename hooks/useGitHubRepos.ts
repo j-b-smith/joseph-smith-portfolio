@@ -1,3 +1,4 @@
+import { GitHubRepo } from '@/types';
 import { useState, useEffect } from 'react';
 
 
