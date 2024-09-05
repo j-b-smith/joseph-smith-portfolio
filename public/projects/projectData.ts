@@ -2,6 +2,12 @@ import { ProjectData } from "@/types";
 
 export const projectData: ProjectData[] = [
   {
+    repoName: 'bruteforce-study-app',
+    customTitle: 'Bruteforce Study App',
+    summary: 'An app I\'ve been building to help my girlfriend study for her college courses.',
+    technologies: ['NextJS', 'React', 'TypeScript'],
+  },
+  {
     repoName: 'joseph-smith-portfolio',
     customTitle: 'My Portfolio',
     summary: 'Here you can view the code behind my portfolio website.',
