@@ -9,7 +9,7 @@ const ResumeSummaryCard = () => {
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-4 sm:p-6 w-full h-full flex flex-col justify-between">
+    <div className="bg-white shadow-lg rounded-lg p-4 sm:p-6 w-full h-full flex flex-col justify-between my-8">
       <div>
         <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Hey, I’m Joseph Smith! 👋</h2>
         <ul className="list-disc list-inside mb-4 sm:mb-6 text-gray-700 space-y-2 sm:space-y-3 lg:text-xl">
