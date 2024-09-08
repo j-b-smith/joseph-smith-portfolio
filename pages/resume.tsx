@@ -10,8 +10,7 @@ const Resume = () => {
 
   return (
     <div
-      className="container mx-auto flex flex-col lg:flex-row gap-8 my-4"
-      style={{ height: "calc(100vh - 4.5rem)", paddingTop: "2rem", paddingBottom: "2rem" }}
+      className="container mx-auto flex flex-col sm:text-s lg:flex-row gap-8 lg:h-[calc(100vh-4.5rem)] lg:py-8"
     >
       {/* Resume Summary Card */}
       <div className="flex-1 h-full">
@@ -19,7 +18,7 @@ const Resume = () => {
       </div>
 
       {/* PDF Viewer Card (Hidden on mobile) */}
-      <div className="flex-1 h-full hidden lg:block">
+      <div className="flex-1 h-full hidden lg:block my-8">
         <div className="border shadow-lg rounded-lg h-full w-full overflow-hidden">
           <Worker
             workerUrl={`https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js`}
