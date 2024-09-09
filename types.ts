@@ -68,3 +68,13 @@ export interface ProjectData {
     height: number;
   }
   
+  export type Step = {
+    name: string;
+    conclusion: string | null;
+  };
+  
+  export type Job = {
+    name: string;
+    steps: Step[];
+  };
+  
