@@ -1,4 +1,4 @@
-import { FooterComponent } from "../../support/components/Footer";
+import { FooterComponent } from "../../support/components/FooterComponent";
 
 
 describe('Footer Component E2E Tests', () => {
