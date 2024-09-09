@@ -5,19 +5,19 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       // Implement node event listeners here for e2e tests if needed
     },
-    baseUrl: 'http://localhost:3000',  // Replace with your local or production base URL
-    specPattern: 'cypress/e2e/**/*.cy.{js,ts,jsx,tsx}',  // Where Cypress looks for e2e tests
+    baseUrl: process.env.CYPRESS_BASE_URL || 'http://localhost:3000',
+    specPattern: 'cypress/e2e/**/*.cy.{js,ts,jsx,tsx}',
     supportFile: 'cypress/support/e2e.ts',
   },
   component: {
     devServer: {
-      framework: 'next', // Use the built-in Next.js framework
-      bundler: 'webpack', // Use the default Webpack bundler from Next.js
+      framework: 'next',
+      bundler: 'webpack',
     },
     setupNodeEvents(on, config) {
       // Implement node event listeners here for component tests if needed
     },
-    specPattern: 'cypress/component/**/*.cy.{js,ts,jsx,tsx}',  // Where Cypress looks for component tests
+    specPattern: 'cypress/component/**/*.cy.{js,ts,jsx,tsx}',
     supportFile: 'cypress/support/component.ts',
   },
 });
