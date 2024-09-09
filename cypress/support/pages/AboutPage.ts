@@ -21,12 +21,22 @@ export class AboutPage {
     return cy.get(this.HEADING);
   }
 
-  static getDescription() {
+  static getAllDescriptions() {
     return cy.get(this.DESCRIPTION);
+  }
+
+  
+  static getDescription(index: number) {
+    return cy.get(this.DESCRIPTION).eq(index);
   }
 
   static getImageGalleryCard() {
     return cy.get(this.IMAGE_GALLERY_CARD);
+  }
+
+  static openImageModal(modalIndex: number) {
+    ImageGalleryComponent.clickThumbnail(modalIndex);
+    ImageModalComponent.isOpen();
   }
 
   static interactWithImageGallery() {

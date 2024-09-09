@@ -27,7 +27,7 @@ export class ImageModalComponent {
     return getElementSize(this.MODAL_CONTENT);
   }
 
-  static getImageSize(): ElementSize {
+  static getImageSize(): Cypress.Chainable<ElementSize> {
     return getElementSize(this.MODAL_IMAGE);
   }
 }

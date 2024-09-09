@@ -1,14 +1,9 @@
 import { ElementSize } from "@/types";
 
-export const getElementSize = (selector: string): ElementSize => {
-    let elementSize: ElementSize = { width: 0, height: 0 };
-    cy.get(selector).invoke('outerWidth').then((width) => {
-      cy.get(selector).invoke('outerHeight').then((height) => {
-        if (width && height) {
-            elementSize = { width, height };
-        }
-      });
-    });
-    return elementSize;
-  };
-  
+export const getElementSize = (selector: string): Cypress.Chainable<ElementSize> => {
+  return cy.get(selector).then(($el) => {
+    const width = $el.outerWidth();
+    const height = $el.outerHeight();
+    return { width, height } as ElementSize;
+  });
+};

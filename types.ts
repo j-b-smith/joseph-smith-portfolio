@@ -63,7 +63,7 @@ export interface ProjectData {
     MongoDB: "/badges/mongodb.png",
   } as const;
 
-  export interface ElementSize {
+  export interface ElementSize{
     width: number;
     height: number;
   }

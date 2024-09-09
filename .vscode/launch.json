@@ -1,0 +1,42 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Electron: Main",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/electron/dist/electron.js",
+      "args": ["."],
+      "cwd": "${workspaceFolder}",
+      "sourceMaps": true,
+      "windows": {
+        "program": "${workspaceFolder}/node_modules/electron/dist/electron.exe"
+      },
+      "linux": {
+        "program": "${workspaceFolder}/node_modules/electron/dist/electron"
+      },
+      "osx": {
+        "program": "${workspaceFolder}/node_modules/electron/dist/Electron.app/Contents/MacOS/Electron"
+      }
+    },
+    {
+      "name": "Electron: Renderer",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "runtimeArgs": [
+        "--remote-debugging-port=3001"
+      ],
+      "webRoot": "${workspaceFolder}",
+      "timeout": 30000
+    },
+    {
+      "name": "Chrome",
+      "type": "chrome",
+      "request": "attach",
+      "port": 3000,
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}
