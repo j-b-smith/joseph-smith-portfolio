@@ -3,16 +3,15 @@ import React from "react";
 import GoogleAnalytics from "@/utils/GoogleAnalytics";
 
 const ResumeSummaryCard = () => {
-
   const handleClick = () => {
     GoogleAnalytics.trackResumeDownload();
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-4 sm:p-6 w-full h-full flex flex-col justify-between my-8">
+    <div className="bg-white shadow-lg rounded-lg p-4 sm:p-6 w-full h-full flex flex-col justify-between my-8" data-cy="resume-summary-card">
       <div>
-        <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Hey, I’m Joseph Smith! 👋</h2>
-        <ul className="list-disc list-inside mb-4 sm:mb-6 text-gray-700 space-y-2 sm:space-y-3 lg:text-xl">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4" data-cy="resume-summary-heading">Hey, I’m Joseph Smith! 👋</h2>
+        <ul className="list-disc list-inside mb-4 sm:mb-6 text-gray-700 space-y-2 sm:space-y-3 lg:text-xl" data-cy="resume-summary-list">
           <li className="py-4">
             I’m a <strong>Software Engineer</strong> passionate about <strong>Quality Automation</strong>. 
             My expertise lies in tools like <strong>Cypress</strong>, <strong>Selenium</strong>, and <strong>PyTest</strong>, 
@@ -54,6 +53,7 @@ const ResumeSummaryCard = () => {
         rel="noopener noreferrer"
         onClick={handleClick}
         className="bg-indigo-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-indigo-700 hover:text-white transition-colors block text-center text-sm sm:text-base"
+        data-cy="resume-download-button"
       >
         Check out my Resume!
       </Link>

@@ -13,7 +13,7 @@ const Projects = () => {
   });
 
   return (
-    <div className="container mx-auto py-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="container mx-auto py-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" data-cy="projects-page">
       {sortedRepos.map((repo) => {
         const project = projectData.find((p) => p.repoName === repo.name);
 
@@ -27,6 +27,7 @@ const Projects = () => {
             summary={project.summary}
             html_url={repo.html_url}
             technologies={[...project.technologies]}
+            data-cy={`project-card-${repo.name}`}
           />
         );
       })}
