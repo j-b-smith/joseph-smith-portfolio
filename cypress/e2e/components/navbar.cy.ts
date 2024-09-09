@@ -1,4 +1,4 @@
-import { NavBarComponent } from "../support/components/NavBar";
+import { NavBarComponent } from "../../support/components/NavBarComponent";
 
 describe('Navbar E2E Tests', () => {
     beforeEach(() => {

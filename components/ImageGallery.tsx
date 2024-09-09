@@ -28,18 +28,19 @@ const ImageGallery: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 h-full overflow-y-auto scrollbar-thin scrollbar-thumb-indigo-600 scrollbar-track-gray-200 py-2">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 h-full overflow-y-auto scrollbar-thin scrollbar-thumb-indigo-600 scrollbar-track-gray-200 py-2" data-cy="image-gallery">
       {images.map((image, index) => (
         <div
           key={index}
           className="w-full h-auto overflow-hidden cursor-pointer rounded-lg relative"
           onClick={() => openModal(image)}
+          data-cy={`image-${index}`}
         >
           <img
-            key={index}
             src={image}
             alt={`Thumbnail ${index + 1}`}
             className="w-full h-full object-cover hover:opacity-80 transition-opacity"
+            data-cy={`image-thumbnail-${index}`}
           />
         </div>
       ))}
