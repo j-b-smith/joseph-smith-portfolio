@@ -1,0 +1,43 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x]  # You can specify multiple Node.js versions if necessary
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run build
+        run: npm run build  # Assumes you have a build script in package.json
+
+      - name: Start server in background
+        run: npm run start &  # Starts the Next.js app in the background
+        env:
+          CI: true
+
+      - name: Wait for server to be ready
+        run: npx wait-on http://localhost:3000  # Wait until the server is ready
+
+      - name: Run Cypress tests
+        run: npm run cypress:run  # Assumes you have a script in package.json to run Cypress tests
