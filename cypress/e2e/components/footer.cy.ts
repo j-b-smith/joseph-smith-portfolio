@@ -1,4 +1,4 @@
-import { FooterComponent } from "@/cypress/support/components/Footer";
+import { FooterComponent } from "../../support/components/Footer";
 
 
 describe('Footer Component E2E Tests', () => {
