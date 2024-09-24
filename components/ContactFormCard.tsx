@@ -16,14 +16,14 @@ const ContactFormCard = () => {
     e.preventDefault();
 
     emailjs.send(
-      process.env.EMAIL_JS_SERVICE_ID || '',               
-      process.env.EMAIL_JS_TEMPLATE_ID || '',              
+      'service_273hcm9',               
+      'template_wcr2hpd',              
       {
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message,
       },
-      process.env.EMAIL_JS_USER_ID || ''
+      'zzNsGvyMrLMaW8CWh'
     )
     .then((result) => {
       console.log(result.text);
