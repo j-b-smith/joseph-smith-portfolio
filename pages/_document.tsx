@@ -6,7 +6,6 @@ export default function Document() {
       <Head>
         {/* Charset and Viewport Meta Tags */}
         <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         {/* Global SEO Metadata */}
         <meta name="description" content="Joseph Smith is a QA Engineer specializing in Cypress, Selenium, and Playwright automation for SaaS, FinTech, and healthcare testing solutions." />

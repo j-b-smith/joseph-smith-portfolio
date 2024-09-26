@@ -88,7 +88,7 @@ const ContactFormCard = () => {
                 onChange={handleChange}
                 className="shadow appearance-none border rounded w-full py-1.5 sm:py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder="Your message"
-                rows={4}
+                rows={18}
                 required
                 data-cy="input-message"
               />
