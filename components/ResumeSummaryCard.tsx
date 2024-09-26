@@ -55,7 +55,7 @@ const ResumeSummaryCard = () => {
         className="bg-indigo-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-indigo-700 hover:text-white transition-colors block text-center text-sm sm:text-base"
         data-cy="resume-download-button"
       >
-        Check out my Resume!
+        Download my Resume!
       </Link>
     </div>
   );
