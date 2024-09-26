@@ -104,10 +104,10 @@ export default function Document() {
               ]
             })
           }}
-        />
+          defer></script>
 
         {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3MR191DV1"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3MR191DV1" defer></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -120,7 +120,7 @@ export default function Document() {
               });
             `,
           }}
-        />
+        defer></script>
       </Head>
       <body>
         <Main />
