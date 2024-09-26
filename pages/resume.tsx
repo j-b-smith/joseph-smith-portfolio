@@ -13,7 +13,7 @@ const Resume = () => {
     <>
       {/* SEO Meta Tags */}
       <Head>
-        <title>Joseph Smith's Resume | QA Engineer & Automation Specialist</title>
+        <title>Joseph Smith&#39;s Resume | QA Engineer & Automation Specialist</title>
         <meta
           name="description"
           content="View Joseph Smith's resume, an experienced QA Engineer skilled in Cypress, Selenium, Playwright, and automation testing for SaaS and FinTech industries. Explore his career experience, skills, and projects."

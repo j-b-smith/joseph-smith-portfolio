@@ -17,7 +17,7 @@ const Projects = () => {
     <>
       {/* SEO Meta Tags */}
       <Head>
-        <title>Joseph Smith's Projects | Cypress & Playwright Automation, SaaS & FinTech</title>
+        <title>Joseph Smith&#39;s Projects | Cypress & Playwright Automation, SaaS & FinTech</title>
         <meta
           name="description"
           content="Explore Joseph Smith's projects, featuring Cypress, Playwright, and Selenium automation for SaaS, FinTech, and B2B payments."
