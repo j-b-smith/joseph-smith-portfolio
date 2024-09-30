@@ -44,7 +44,7 @@ const ResumeSummaryCard: React.FC = () => {
         justifyContent="center"
         py={4}
         px={4}
-        bgGradient="linear(to-r, blue.400, purple.500)"
+        backgroundImage="linear-gradient(to right, #3B82F6, #4F46E5)"
         borderBottom="1px solid"
         borderColor="gray.200"
         data-cy="resume-summary-header"
@@ -125,7 +125,8 @@ const ResumeSummaryCard: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleClick}
-              colorScheme="purple"
+              color="white"
+              backgroundColor="#4F46E5"
               size="md"
               borderRadius="full"
               data-cy="resume-download-button"
