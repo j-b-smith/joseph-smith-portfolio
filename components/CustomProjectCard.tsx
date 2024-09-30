@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import GoogleAnalytics from "@/utils/GoogleAnalytics";
 import { CustomProjectCardProps, badgeImages } from '../types';
+import { Box, Heading, Text, Flex, Button, Tag, useColorModeValue, Divider } from "@chakra-ui/react";
 
 const CustomProjectCard: React.FC<CustomProjectCardProps> = ({
   customTitle,
@@ -11,53 +12,137 @@ const CustomProjectCard: React.FC<CustomProjectCardProps> = ({
   html_url,
   technologies,
 }) => {
+  // Chakra color modes for light/dark theme
+  const bgGradient = useColorModeValue(
+    "linear(to-r, blue.400, purple.500)", 
+    "linear(to-r, blue.600, purple.700)"
+  );
+  const bgColor = useColorModeValue("white", "gray.800");
+  const secondaryBgColor = useColorModeValue("gray.50", "gray.700");
+  const textColor = useColorModeValue("gray.700", "gray.300");
+
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col" data-cy="project-card">
-      <div
-        className="w-full h-14 sm:h-16 flex px-3 sm:px-4 py-1"
-        style={{
-          background: "linear-gradient(to right, #667eea, #764ba2)",
-        }}
+    <Box
+      bg={bgColor}
+      shadow="lg"
+      borderRadius="lg"
+      overflow="hidden"
+      display="flex"
+      flexDirection="column"
+      data-cy="project-card"
+    >
+      {/* Card Header */}
+      <Flex
+        w="full"
+        h="16"
+        alignItems="center"
+        px={{ base: 3, sm: 4 }}
+        py={1}
+        bgGradient={bgGradient}
         data-cy="project-card-header"
       >
-        <h2 className="text-sm sm:text-lg text-white" data-cy="project-title">{customTitle}</h2>
-      </div>
-      <div className="p-3 sm:p-4 flex flex-col flex-grow">
-        <div className="flex flex-row flex-wrap justify-content space-x-2 sm:space-x-3 mb-3 sm:mb-4">
+        <Heading as="h2" size="sm" color="white" data-cy="project-title">
+          {customTitle}
+        </Heading>
+      </Flex>
+
+      {/* Card Body */}
+      <Flex direction="column" flex="1" p={{ base: 3, sm: 4 }}>
+        {/* Technology Badges */}
+        <Flex flexWrap="wrap" gap={3} mb={4}>
           {technologies.map((tech) => (
-            <Image
+            <Tag
               key={tech}
-              src={badgeImages[tech]}
-              alt={`${tech} badge`}
-              width={40}
-              height={40}
-              className="object-contain"
+              size="lg"
+              padding={2}
+              colorScheme="teal"
+              borderRadius="xl"
+              display="flex"
+              alignItems="center"
               data-cy={`badge-${tech}`}
-            />
+            >
+              <Image
+                src={badgeImages[tech]}
+                alt={`${tech} badge`}
+                width={24}
+                height={24}
+                className="object-contain"
+              />
+              <Text ml={2}>{tech}</Text>
+            </Tag>
           ))}
-        </div>
-        <h3 className="text-sm sm:text-md font-semibold text-gray-900 mb-2">
-          <strong>Repository:</strong> {repoName}
-        </h3>
-        <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4 flex-grow break-words" data-cy="project-summary">
-          <strong>Summary:</strong> {summary}
-        </p>
-        <Link
-          href={`${html_url}/blob/master/README.md`}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() =>
-            GoogleAnalytics.trackLinkClick(
-              `"Check out the code!" clicked for ${repoName}`
-            )
-          }
-          className="bg-indigo-500 text-white py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg hover:bg-indigo-600 transition-colors duration-300 text-center mt-auto text-xs sm:text-sm"
-          data-cy="project-link"
+        </Flex>
+
+        {/* Divider */}
+        <Divider borderColor="gray.300" my={4} />
+
+        {/* Repository Section */}
+        <Box
+          mb={4}
+          p={3}
+          bg={secondaryBgColor}
+          borderRadius="md"
+          boxShadow="base"
+          data-cy="repository-section"
         >
-          Check out the code!
-        </Link>
-      </div>
-    </div>
+          <Heading as="h3" size="sm" color="gray.600" mb={2} data-cy="repository-heading">
+            Repository Information
+          </Heading>
+          <Text
+            fontSize="sm"
+            fontWeight="bold"
+            color={textColor}
+            bg={secondaryBgColor}
+            px={2}
+            py={1}
+            borderRadius="md"
+            data-cy="repository-info"
+          >
+            {repoName}
+          </Text>
+        </Box>
+
+        {/* Summary Section */}
+        <Box mb={4} flex="1" data-cy="summary-section">
+          <Heading as="h3" size="sm" color="gray.600" mb={2} data-cy="summary-heading">
+            Project Summary
+          </Heading>
+          <Text
+            fontSize="sm"
+            color={textColor}
+            lineHeight="tall"
+            flexGrow={1}
+            bg={secondaryBgColor}
+            p={3}
+            borderRadius="md"
+            boxShadow="base"
+            data-cy="project-summary"
+          >
+            {summary}
+          </Text>
+        </Box>
+
+        {/* Keep Button at the Bottom */}
+        <Flex mt="auto" justifyContent="center">
+          <Link href={`${html_url}/blob/master/README.md`} passHref>
+            <Button
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                GoogleAnalytics.trackLinkClick(`"Check out the code!" clicked for ${repoName}`)
+              }
+              colorScheme="purple"
+              size="md"
+              borderRadius="full"
+              data-cy="project-link"
+            >
+              Check out the code!
+            </Button>
+          </Link>
+        </Flex>
+      </Flex>
+    </Box>
   );
 };
 
