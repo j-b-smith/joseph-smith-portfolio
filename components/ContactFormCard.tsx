@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import GoogleAnalytics from "../utils/GoogleAnalytics";
 
 const ContactFormCard = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -28,9 +29,11 @@ const ContactFormCard = () => {
     .then((result) => {
       console.log(result.text);
       setIsSent(true);
+      GoogleAnalytics.event('submit', 'Contact Form', 'Form Submitted Successfully');
     }, (error) => {
       console.log(error.text);
       alert('Failed to send the message. Please try again later.');
+      GoogleAnalytics.event('error', 'Contact Form', 'Form Submission Failed');
     });
   };
 
@@ -98,6 +101,7 @@ const ContactFormCard = () => {
                 type="submit"
                 className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1.5 sm:py-2 px-4 rounded focus:outline-none focus:shadow-outline text-sm sm:text-base"
                 data-cy="submit-button"
+                onClick={() => GoogleAnalytics.event('click', 'Contact Form', 'Submit Button Clicked')}
               >
                 Send Message
               </button>

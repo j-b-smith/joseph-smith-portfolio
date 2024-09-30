@@ -1,11 +1,8 @@
-import { ImageModalProps } from "@/types";
-import React from "react";
+import React from 'react';
+import { ImageModalProps } from '@/types';
+import GoogleAnalytics from '@/utils/GoogleAnalytics';
 
-const ImageModal: React.FC<ImageModalProps> = ({
-  isOpen,
-  imageSrc,
-  onClose,
-}) => {
+const ImageModal: React.FC<ImageModalProps> = ({ isOpen, imageSrc, onClose }) => {
   if (!isOpen) return null;
 
   return (
@@ -19,7 +16,10 @@ const ImageModal: React.FC<ImageModalProps> = ({
         />
         <button
           className="absolute top-2 right-2 text-white text-2xl sm:text-3xl"
-          onClick={onClose}
+          onClick={() => {
+            onClose();
+            GoogleAnalytics.trackLinkClick('Close button clicked - ImageModal');
+          }}
           data-cy="close-modal-button"
         >
           &times;

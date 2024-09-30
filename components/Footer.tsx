@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import GoogleAnalytics from "@/utils/GoogleAnalytics";
 
 const Footer = () => {
   return (
@@ -17,6 +18,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             data-cy="footer-linkedin"
+            onClick={() => GoogleAnalytics.trackLinkClick('LinkedIn - Footer')}
           >
             <Image
               src="/contact/linkedin.png"
@@ -32,6 +34,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             data-cy="footer-github"
+            onClick={() => GoogleAnalytics.trackLinkClick('GitHub - Footer')}
           >
             <Image
               src="/contact/github.png"
