@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import useGitHubRepos from '../hooks/useGitHubRepos';
 import CustomProjectCard from '../components/CustomProjectCard';
 import { projectData } from '../public/projects/projectData';
+import GoogleAnalytics from '@/utils/GoogleAnalytics';
 
 const Projects = () => {
+  useEffect(() => {
+    GoogleAnalytics.trackLinkClick("Projects Page View");
+  }, []);
+  
   const repos = useGitHubRepos('j-b-smith');
 
   const sortedRepos = repos.sort((a, b) => {

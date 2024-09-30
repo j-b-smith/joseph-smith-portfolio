@@ -4,7 +4,7 @@ import GoogleAnalytics from "@/utils/GoogleAnalytics";
 
 const ResumeSummaryCard = () => {
   const handleClick = () => {
-    GoogleAnalytics.trackResumeDownload();
+    GoogleAnalytics.trackLinkClick('Resume Download - Resume Summary Card');
   };
 
   return (

@@ -1,9 +1,14 @@
 import RecommendationCard from '@/components/RecommendationCard';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import { recommendations } from '../public/recommendations/recommendationsData';
+import GoogleAnalytics from '@/utils/GoogleAnalytics';
 
 const RecommendationsPage: React.FC = () => {
+  useEffect(() => {
+    GoogleAnalytics.trackLinkClick("Recommendations Page View");
+  }, []);
+
   return (
     <>
       {/* SEO Meta Tags */}

@@ -47,9 +47,7 @@ const CustomProjectCard: React.FC<CustomProjectCardProps> = ({
           target="_blank"
           rel="noopener noreferrer"
           onClick={() =>
-            GoogleAnalytics.trackLinkClick(
-              `"Check out the code!" clicked for ${repoName}`
-            )
+            GoogleAnalytics.trackLinkClick(`"Check out the code!" clicked for ${repoName}`)
           }
           className="bg-indigo-500 text-white py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg hover:bg-indigo-600 transition-colors duration-300 text-center mt-auto text-xs sm:text-sm"
           data-cy="project-link"

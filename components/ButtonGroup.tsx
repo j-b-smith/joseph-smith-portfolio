@@ -3,8 +3,14 @@ import { Box, Button } from '@chakra-ui/react';
 import { DownloadIcon } from '@chakra-ui/icons';
 import { FaGithub, FaLinkedin, FaRegCommentDots } from 'react-icons/fa';
 import Link from 'next/link';
+import GoogleAnalytics from '../utils/GoogleAnalytics';
 
 const ButtonGroup: React.FC = () => {
+
+  const handleButtonClick = (label: string) => {
+    GoogleAnalytics.trackLinkClick(label);
+  };
+
   return (
     <Box
       position="fixed"
@@ -25,6 +31,7 @@ const ButtonGroup: React.FC = () => {
           width="12rem"
           textOverflow="ellipsis"
           whiteSpace="nowrap"
+          onClick={() => handleButtonClick('Message Button - Button Group')}
         >
           Message
         </Button>
@@ -45,6 +52,7 @@ const ButtonGroup: React.FC = () => {
         width="12rem"
         textOverflow="ellipsis"
         whiteSpace="nowrap"
+        onClick={() => handleButtonClick('Resume Download Button - Button Group')}
       >
         Resume
       </Button>
@@ -62,6 +70,7 @@ const ButtonGroup: React.FC = () => {
         width="12rem"
         textOverflow="ellipsis"
         whiteSpace="nowrap"
+        onClick={() => handleButtonClick('GitHub Button - Button Group')}
       >
         GitHub
       </Button>
@@ -79,6 +88,7 @@ const ButtonGroup: React.FC = () => {
         width="12rem"
         textOverflow="ellipsis"
         whiteSpace="nowrap"
+        onClick={() => handleButtonClick('LinkedIn Button - Button Group')}
       >
         LinkedIn
       </Button>

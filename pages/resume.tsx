@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import { Worker, Viewer } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import ResumeSummaryCard from "../components/ResumeSummaryCard";
+import GoogleAnalytics from "@/utils/GoogleAnalytics";
 
 const Resume = () => {
+  useEffect(() => {
+    GoogleAnalytics.trackLinkClick("Resume Page View");
+  }, []);
+
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
   return (
+  
     <>
       {/* SEO Meta Tags */}
       <Head>

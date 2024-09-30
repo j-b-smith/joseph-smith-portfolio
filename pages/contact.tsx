@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import ContactInfoCard from '../components/ContactInfoCard';
 import ContactFormCard from '../components/ContactFormCard';
+import GoogleAnalytics from '@/utils/GoogleAnalytics';
 
 const Contact = () => {
+  useEffect(() => {
+    GoogleAnalytics.trackLinkClick("Contact Page View");
+  }, []);
+  
   return (
     <>
       {/* SEO Meta Tags */}
