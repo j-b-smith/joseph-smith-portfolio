@@ -35,7 +35,7 @@ const ContactFormCard = () => {
   };
 
   return (
-    <div className="w-full lg:w-1/2 flex-shrink-0 bg-white shadow-lg rounded-lg p-4 sm:p-6" data-cy="contact-form">
+    <div className="w-full lg:w-1/2 flex-shrink-0 bg-white shadow-lg rounded-lg p-4 sm:p-6 flex flex-col" data-cy="contact-form">
       {isSent ? (
         <div className="text-center" data-cy="message-sent">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Message Sent! 🎉</h2>
@@ -43,8 +43,8 @@ const ContactFormCard = () => {
         </div>
       ) : (
         <>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Send Me a Message</h2>
-          <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4" data-cy="contact-form-submit">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-gray-600">Send me a Message!</h2>
+          <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 flex-grow flex flex-col" data-cy="contact-form-submit">
             <div>
               <label htmlFor="name" className="block text-gray-700 text-sm sm:text-base font-bold mb-1 sm:mb-2">
                 Name
@@ -77,7 +77,7 @@ const ContactFormCard = () => {
                 data-cy="input-email"
               />
             </div>
-            <div>
+            <div className="flex-grow">
               <label htmlFor="message" className="block text-gray-700 text-sm sm:text-base font-bold mb-1 sm:mb-2">
                 Message
               </label>
@@ -93,7 +93,7 @@ const ContactFormCard = () => {
                 data-cy="input-message"
               />
             </div>
-            <div className="flex items-center justify-between">
+            <div className="flex items-end justify-between mt-4">
               <button
                 type="submit"
                 className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1.5 sm:py-2 px-4 rounded focus:outline-none focus:shadow-outline text-sm sm:text-base"
