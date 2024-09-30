@@ -2,8 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import GoogleAnalytics from "@/utils/GoogleAnalytics";
-import { CustomProjectCardProps, badgeImages } from '../types';
-import { Box, Heading, Text, Flex, Button, Tag, useColorModeValue, Divider } from "@chakra-ui/react";
+import { CustomProjectCardProps, badgeImages } from "../types";
+import { Box, Heading, Text, Flex, Button, Tag, Divider, useColorModeValue } from "@chakra-ui/react";
 
 const CustomProjectCard: React.FC<CustomProjectCardProps> = ({
   customTitle,
@@ -12,11 +12,6 @@ const CustomProjectCard: React.FC<CustomProjectCardProps> = ({
   html_url,
   technologies,
 }) => {
-  // Chakra color modes for light/dark theme
-  const bgGradient = useColorModeValue(
-    "linear(to-r, blue.400, purple.500)", 
-    "linear(to-r, blue.600, purple.700)"
-  );
   const bgColor = useColorModeValue("white", "gray.800");
   const secondaryBgColor = useColorModeValue("gray.50", "gray.700");
   const textColor = useColorModeValue("gray.700", "gray.300");
@@ -34,11 +29,11 @@ const CustomProjectCard: React.FC<CustomProjectCardProps> = ({
       {/* Card Header */}
       <Flex
         w="full"
-        h="16"
+        h="14"
         alignItems="center"
         px={{ base: 3, sm: 4 }}
         py={1}
-        bgGradient={bgGradient}
+        bg="purple.600"
         data-cy="project-card-header"
       >
         <Heading as="h2" size="sm" color="white" data-cy="project-title">
@@ -48,17 +43,20 @@ const CustomProjectCard: React.FC<CustomProjectCardProps> = ({
 
       {/* Card Body */}
       <Flex direction="column" flex="1" p={{ base: 3, sm: 4 }}>
-        {/* Technology Badges */}
-        <Flex flexWrap="wrap" gap={3} mb={4}>
+        <Flex justify="space-between" flexWrap="wrap" gap={3} mb={4}>
           {technologies.map((tech) => (
             <Tag
               key={tech}
               size="lg"
+              flex="1"
+              maxW="fit-content"
+              mx="auto"
               padding={2}
               colorScheme="teal"
               borderRadius="xl"
               display="flex"
               alignItems="center"
+              justifyContent="center"
               data-cy={`badge-${tech}`}
             >
               <Image
@@ -68,7 +66,9 @@ const CustomProjectCard: React.FC<CustomProjectCardProps> = ({
                 height={24}
                 className="object-contain"
               />
-              <Text ml={2}>{tech}</Text>
+              <Text ml={2} display={{ base: "none", xl: "inline" }}>
+                {tech}
+              </Text>
             </Tag>
           ))}
         </Flex>
@@ -78,8 +78,8 @@ const CustomProjectCard: React.FC<CustomProjectCardProps> = ({
 
         {/* Repository Section */}
         <Box
-          mb={4}
-          p={3}
+          mb={3}
+          p={2}
           bg={secondaryBgColor}
           borderRadius="md"
           boxShadow="base"
