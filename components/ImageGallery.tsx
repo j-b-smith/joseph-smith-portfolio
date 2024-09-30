@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ImageModal from './ImageModal';
+import GoogleAnalytics from '@/utils/GoogleAnalytics';
 
 const ImageGallery: React.FC = () => {
   const images = [
@@ -20,11 +21,13 @@ const ImageGallery: React.FC = () => {
   const openModal = (image: string) => {
     setSelectedImage(image);
     setIsModalOpen(true);
+    GoogleAnalytics.trackLinkClick(`Image ${image} clicked - ImageGallery`);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedImage('');
+    GoogleAnalytics.trackLinkClick('Modal closed - ImageGallery');
   };
 
   return (

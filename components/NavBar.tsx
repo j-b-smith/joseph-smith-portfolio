@@ -3,6 +3,7 @@ import { FaBars } from "react-icons/fa";
 import { useRouter } from "next/router";
 import MainNavigation from "./navigation/MainNavigation";
 import MobileNavigation from "./navigation/MobileNavigation";
+import GoogleAnalytics from "@/utils/GoogleAnalytics";
 
 const Navbar = () => {
   const router = useRouter();
@@ -10,10 +11,12 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    GoogleAnalytics.trackLinkClick(isOpen ? "Mobile Menu Closed" : "Mobile Menu Opened");
   };
 
   const closeMenu = () => {
     setIsOpen(false);
+    GoogleAnalytics.trackLinkClick("Mobile Menu Closed");
   };
 
   const getStyling = (path: string) =>
@@ -31,6 +34,7 @@ const Navbar = () => {
               alt="Joseph Smith"
               className="w-full h-full object-cover"
               data-cy="navbar-profile-image"
+              onClick={() => GoogleAnalytics.trackLinkClick("Profile Image Clicked")}
             />
           </div>
           <h1 className="text-xs sm:text-sm font-medium text-white" data-cy="navbar-name">Joseph Smith</h1>

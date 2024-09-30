@@ -46,9 +46,7 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({
           target="_blank"
           rel="noopener noreferrer"
           onClick={() =>
-            GoogleAnalytics.trackLinkClick(
-              `"Recommendation from ${reviewerName}" clicked`
-            )
+            GoogleAnalytics.trackLinkClick(`"Recommendation from ${reviewerName}" clicked`)
           }
           className="bg-indigo-500 text-white py-1.5 px-3 sm:py-2 sm:px-4 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors duration-300 text-center mt-auto text-xs sm:text-sm"
           data-cy="linkedin-recommendation-link"

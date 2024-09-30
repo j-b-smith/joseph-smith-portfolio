@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ImageGallery from "../components/ImageGallery";
 import Head from "next/head";
+import GoogleAnalytics from "@/utils/GoogleAnalytics";
 
 const About = () => {
+
+  useEffect(() => {
+    GoogleAnalytics.trackLinkClick("About Page View");
+  }, []);
+
+
   return (
     <>
       {/* SEO Meta Tags */}
