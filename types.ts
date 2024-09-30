@@ -67,4 +67,30 @@ export interface ProjectData {
     width: number;
     height: number;
   }
+
+export interface Experience {
+  company: string;
+  position: string;
+  duration: string;
+  summary: string[];
+  technologies: string[];
+}
+
+export interface Education {
+  school: string;
+  degree: string;
+  graduationDate: string;
+}
+
+export interface Skill {
+  category: string;
+  skills: string[];
+}
+
+export interface ResumeData {
+  experiences: Experience[];
+  education: Education[];
+  skills: Skill[];
+}
+
   

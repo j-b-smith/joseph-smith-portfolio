@@ -34,7 +34,7 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({
         alignItems="center"
         px={{ base: 3, sm: 5 }}
         py={2}
-        bg="purple.600"
+        backgroundImage="linear-gradient(to right, #3B82F6, #4F46E5)"
         data-cy="recommendation-header"
       >
         <Image
@@ -86,7 +86,8 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({
               onClick={() =>
                 GoogleAnalytics.trackLinkClick(`"Recommendation from ${reviewerName}" clicked`)
               }
-              colorScheme="purple"
+              color="white"
+              backgroundColor="#4F46E5"
               size="md"
               borderRadius="full"
               data-cy="linkedin-recommendation-link"
