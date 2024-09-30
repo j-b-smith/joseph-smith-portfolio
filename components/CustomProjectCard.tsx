@@ -33,7 +33,7 @@ const CustomProjectCard: React.FC<CustomProjectCardProps> = ({
         alignItems="center"
         px={{ base: 3, sm: 4 }}
         py={1}
-        bg="purple.600"
+        backgroundImage="linear-gradient(to right, #3B82F6, #4F46E5)"
         data-cy="project-card-header"
       >
         <Heading as="h2" size="sm" color="white" data-cy="project-title">
@@ -132,7 +132,8 @@ const CustomProjectCard: React.FC<CustomProjectCardProps> = ({
               onClick={() =>
                 GoogleAnalytics.trackLinkClick(`"Check out the code!" clicked for ${repoName}`)
               }
-              colorScheme="purple"
+              bgColor="#4F46E5"
+              color="white"
               size="md"
               borderRadius="full"
               data-cy="project-link"

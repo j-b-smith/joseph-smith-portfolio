@@ -50,6 +50,7 @@ export interface ResumeData {
       {
         company: "Aya Healthcare",
         role: "QA Engineer II",
+
         duration: "May 2023 – Present",
         description: [
           "Collaborated with product, engineering, and design teams to refine user stories and ensure well-defined acceptance criteria.",
