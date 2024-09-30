@@ -1,8 +1,9 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import GoogleAnalytics from "@/utils/GoogleAnalytics";
 import { RecommendationCardProps } from "@/types";
+import { Box, Heading, Text, Flex, Button, useColorModeValue } from "@chakra-ui/react";
 
 const RecommendationCard: React.FC<RecommendationCardProps> = ({
   reviewerName,
@@ -12,13 +13,28 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({
   reviewContent,
   imagePath,
 }) => {
+  const bgColor = useColorModeValue("white", "gray.800");
+  const secondaryBgColor = useColorModeValue("gray.50", "gray.700");
+  const textColor = useColorModeValue("gray.700", "gray.300");
+
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col h-full min-h-[350px]" data-cy="recommendation-card">
-      <div
-        className="w-full h-20 flex items-center px-3 sm:px-5 py-2"
-        style={{
-          background: "linear-gradient(to right, #667eea, #764ba2)",
-        }}
+    <Box
+      bg={bgColor}
+      shadow="lg"
+      borderRadius="lg"
+      overflow="hidden"
+      display="flex"
+      flexDirection="column"
+      data-cy="recommendation-card"
+    >
+      {/* Card Header */}
+      <Flex
+        w="full"
+        h="20"
+        alignItems="center"
+        px={{ base: 3, sm: 5 }}
+        py={2}
+        bg="purple.600"
         data-cy="recommendation-header"
       >
         <Image
@@ -29,32 +45,58 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({
           className="rounded-full border-2 border-white"
           data-cy="recommendation-image"
         />
-        <div className="ml-3 sm:ml-5">
-          <h3 className="text-sm sm:text-base font-bold text-white" data-cy="reviewer-name">{reviewerName}</h3>
-          <p className="text-xs sm:text-sm text-white" data-cy="reviewer-job">{jobTitle}</p>
-          <p className="text-xs sm:text-sm text-white" data-cy="reviewer-relationship">
+        <Box ml={3}>
+          <Heading as="h3" size="sm" color="white" data-cy="reviewer-name">
+            {reviewerName}
+          </Heading>
+          <Text fontSize="xs" color="white" data-cy="reviewer-job">{jobTitle}</Text>
+          <Text fontSize="xs" color="white" data-cy="reviewer-relationship">
             {date} &bull; {relationship}
-          </p>
-        </div>
-      </div>
-      <div className="p-4 sm:p-5 flex flex-col flex-grow">
-        <blockquote className="text-xs sm:text-sm text-gray-700 italic mb-3 sm:mb-4 flex-grow break-words border-l-4 pl-4 border-indigo-500" data-cy="review-content">
-          {reviewContent}
-        </blockquote>
-        <Link
-          href="https://www.linkedin.com/in/joseph-b-smith-eng/details/recommendations/"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() =>
-            GoogleAnalytics.trackLinkClick(`"Recommendation from ${reviewerName}" clicked`)
-          }
-          className="bg-indigo-500 text-white py-1.5 px-3 sm:py-2 sm:px-4 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors duration-300 text-center mt-auto text-xs sm:text-sm"
-          data-cy="linkedin-recommendation-link"
+          </Text>
+        </Box>
+      </Flex>
+
+      {/* Card Body */}
+      <Flex direction="column" p={4} flex="1">
+        <Text
+          fontSize="sm"
+          color={textColor}
+          lineHeight="tall"
+          flexGrow={1}
+          bg={secondaryBgColor}
+          p={3}
+          mb={4}
+          borderRadius="md"
+          boxShadow="base"
+          data-cy="review-content"
         >
-          View on LinkedIn
-        </Link>
-      </div>
-    </div>
+          {reviewContent}
+        </Text>
+
+        {/* Button to View on LinkedIn */}
+        <Flex mt="auto" justifyContent="center">
+          <Link
+            href="https://www.linkedin.com/in/joseph-b-smith-eng/details/recommendations/"
+            passHref
+          >
+            <Button
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                GoogleAnalytics.trackLinkClick(`"Recommendation from ${reviewerName}" clicked`)
+              }
+              colorScheme="purple"
+              size="md"
+              borderRadius="full"
+              data-cy="linkedin-recommendation-link"
+            >
+              View on LinkedIn
+            </Button>
+          </Link>
+        </Flex>
+      </Flex>
+    </Box>
   );
 };
 
