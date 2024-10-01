@@ -88,9 +88,37 @@ export interface Skill {
 }
 
 export interface ResumeData {
-  experiences: Experience[];
-  education: Education[];
-  skills: Skill[];
+  name: string;
+  contact: {
+    email: string;
+    phone: string;
+    location: string;
+    linkedin: string;
+    github: string;
+  };
+  education: {
+    institution: string;
+    degree: string;
+    graduationDate: string;
+  };
+  experience: {
+    company: string;
+    role: string;
+    duration: string;
+    description: string[];
+    technologies: string[];
+  }[];
+  projects: {
+    title: string;
+    description: string;
+    repoUrl: string;
+    technologies: string[];
+  }[];
+  skills: {
+    languages: string[];
+    frameworks: string[];
+    tools: string[];
+  };
 }
 
   

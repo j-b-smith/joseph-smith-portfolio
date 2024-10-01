@@ -1,38 +1,6 @@
-export interface ResumeData {
-    name: string;
-    contact: {
-      email: string;
-      phone: string;
-      location: string;
-      linkedin: string;
-      github: string;
-    };
-    education: {
-      institution: string;
-      degree: string;
-      graduationDate: string;
-    };
-    experience: {
-      company: string;
-      role: string;
-      duration: string;
-      description: string[];
-      technologies: string[];
-    }[];
-    projects: {
-      title: string;
-      description: string;
-      repoUrl: string;
-      technologies: string[];
-    }[];
-    skills: {
-      languages: string[];
-      frameworks: string[];
-      tools: string[];
-    };
-  }
-  
-  export const resumeData: ResumeData = {
+import { ResumeData } from "@/types";
+
+export const resumeData: ResumeData = {
     name: "Joseph Smith",
     contact: {
       email: "jsmith74265@gmail.com",
@@ -50,7 +18,6 @@ export interface ResumeData {
       {
         company: "Aya Healthcare",
         role: "QA Engineer II",
-
         duration: "May 2023 – Present",
         description: [
           "Collaborated with product, engineering, and design teams to refine user stories and ensure well-defined acceptance criteria.",
@@ -59,7 +26,7 @@ export interface ResumeData {
           "Maintained and updated the test case repository to ensure comprehensive test coverage.",
           "Worked effectively in cross-functional teams across multiple time zones, fostering seamless collaboration.",
         ],
-        technologies: ["PHP", "Selenium", "PHPUnit", "Behat", "JIRA", "Docker", "Ansible", "Composer", "DataDog", "Jenkins", "Postman", "PractiTest", "GitHub"],
+        technologies: ["PHP", "Selenium", "PHPUnit", "PractiTest", "JIRA", "DataDog", "Docker", "Ansible", "Composer", "GitHub"],
       },
       {
         company: "Routable",
@@ -67,10 +34,10 @@ export interface ResumeData {
         duration: "October 2021 – January 2023",
         description: [
           "Played a crucial role in expanding B2B payments to over 220 countries using SWIFT and local payment systems.",
-          "Assisted in increasing automation test coverage from 25% to 50% of the backlog over 3 months by designing and developing tests with Cypress and Playwright.",
-          "Developed a test automation engine that reduced manual testing time from over 4 hours to less than 1 hour for new features involving international payments.",
+          "Increased automation coverage from 25% to 50% of the backlog over 3 months by designing and developing tests with Cypress and Playwright.",
+          "Developed a test automation script that reduced manual testing time from over 4 hours to less than 1 hour for international payments.",
         ],
-        technologies: ["Cypress", "Playwright", "Python", "PyTest", "BDD", "TypeScript", "JIRA", "GitHub", "Postman", "TestRail"],
+        technologies: ["JavaScript", "TypeScript", "Cypress", "Playwright", "Python", "PyTest", "BDD", "JIRA", "Postman", "TestRail"],
       },
       {
         company: "Sharpen",
@@ -82,29 +49,28 @@ export interface ResumeData {
           "Performed manual regression testing to support the release process and maintain product stability.",
           "Conducted API testing using Postman to verify endpoint functionality and reliability.",
         ],
-        technologies: ["Cypress", "Postman", "PyTest", "Docker", "Confluence", "JIRA"],
+        technologies: ["Cypress", "Postman", "JIRA", "DataDog", "Confluence"],
       },
     ],
     projects: [
       {
         title: "Bruteforce Study App",
         description:
-          "This is an ongoing project I’ve been developing to help my girlfriend study for her college courses course. The app features customizable quizzes and flashcards, allowing students to study various subjects with ease. The project showcases my ability to work with complex data models and implement interactive user interfaces using Next.js, React, and TypeScript, while leveraging Playwright for end-to-end testing.",
+          "An ongoing project designed to help my girlfriend study for her college courses. It features customizable quizzes and flashcards, allowing students to study various subjects. Built using Next.js, React, TypeScript, and Playwright.",
         repoUrl: "https://github.com/j-b-smith/bruteforce-study-app",
-        technologies: ["NextJS", "React", "TypeScript", "Playwright"],
+        technologies: ["Next.js", "React", "TypeScript", "Playwright"],
       },
       {
         title: "Joseph Smith Portfolio",
         description:
-          "This portfolio website showcases my professional background, projects, and skills as a QA engineer and software developer. Built using Next.js, React, and TypeScript, the site is optimized for performance, SEO, and responsive design. It also features automated testing with Cypress to ensure quality and maintainability.",
+          "A portfolio website showcasing my professional background and skills as a QA engineer and software developer. Built with Next.js, React, and TypeScript, it is optimized for performance, SEO, and responsive design, and includes Cypress automation.",
         repoUrl: "https://github.com/j-b-smith/joseph-smith-portfolio",
-        technologies: ["NextJS", "React", "TypeScript", "Cypress"],
+        technologies: ["Next.js", "React", "TypeScript", "Cypress"],
       },
     ],
     skills: {
       languages: ["JavaScript", "TypeScript", "Python", "Java", "PHP"],
-      frameworks: ["React", "Next.js", "Node.js", "Django", "Cypress", "Selenium", "Playwright", "PyTest", "PHPUnit", "Behat"],
-      tools: ["Postman", "Docker", "Git", "JIRA", "CI/CD", "Github Actions", "Ansible", "Composer"],
+      frameworks: ["React", "Next.js", "Node.js", "Django", "Cypress", "Playwright", "PyTest", "PHPUnit"],
+      tools: ["Postman", "Docker", "Git", "JIRA", "CI/CD", "GitHub Actions", "Ansible", "Composer"],
     },
-  };
-  
+};
